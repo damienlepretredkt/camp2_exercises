@@ -17,3 +17,24 @@ const bonus = driverData.bonus;
 let canRentACar;
 
 // Your code here:
+
+const licenceType = ["AM", "A1", "A2", "A", "B1", "B", "C1", "C", "D1", "D", "BE", "C1E", "CE", "D1E", "DE"];
+const currentYear = 2017;
+
+const conductorA = {
+  name: "Jean Michel",
+  license: "B",
+  licenseYear: 2001,
+  accidentsCount: 1,
+  bonus: 0.5
+};
+
+if (
+  licenceType.indexOf(driverLicense) > 3 &&
+  licenceIssued < (currentYear - 2) &&
+  (numberOfAccident === 0 || bonus >= 0.7)
+) {
+  canRentACar = true;
+} else {
+  canRentACar = false;
+}
