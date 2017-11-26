@@ -9,8 +9,16 @@
 
 
 function fact(n) {
-  // your code here
+  if (n > 0) {
+    return n * fact(n - 1);
+  } else if (n === 0) {
+    return 1;
+  } else {
+    return null;
+  }
 }
+
+// 4 => 4*3*2*1
 
 
 // do not remove this line, it is for tests
