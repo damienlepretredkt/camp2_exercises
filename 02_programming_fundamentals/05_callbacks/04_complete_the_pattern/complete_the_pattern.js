@@ -35,6 +35,21 @@
 
 function pattern(size) {
   // Your code here
+  // condition < 1
+  if (size >= 1) {
+    let result = "";
+    for (let i = 1; i <= size; i++) {
+      let line = "";
+      for (let j = 0; j < i ; j++) {
+        line = line + i;
+      }
+      result = (result)  + (line + "\n");
+    }
+    return result.trim();
+
+  } else {
+    return "";
+  }
 }
 
 // Do not remove last lines, it is for tests
