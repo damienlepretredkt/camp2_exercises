@@ -45,8 +45,26 @@ const MORSE_CODE = {
 };
 
 function decodeMorse(morse) {
-  // Your code here
+  const morseSplittedInWordsinAnArray = morse.split("   ");
+
+  return morseSplittedInWordsinAnArray
+    .map((word) => manageWord(word))
+    .join(" ");
 }
+
+function manageWord (text) {
+  let convertedWord = [];
+  const wordInMorseToArray = text.split(" ");
+  return wordInMorseToArray
+    .map((letter) => getLetterFromKey(letter))
+    .join("");
+}
+
+
+function getLetterFromKey(text) {
+  return MORSE_CODE[text];
+}
+
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
