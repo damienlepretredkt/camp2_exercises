@@ -53,7 +53,7 @@ function decodeMorse(morse) {
 }
 
 function manageWord (text) {
-  let convertedWord = [];
+
   const wordInMorseToArray = text.split(" ");
   return wordInMorseToArray
     .map((letter) => getLetterFromKey(letter))
