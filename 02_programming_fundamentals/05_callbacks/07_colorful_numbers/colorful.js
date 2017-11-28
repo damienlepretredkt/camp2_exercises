@@ -24,7 +24,7 @@ function isColorful(number) {
 function getSubStringToCalculate(number, subStringLength) {
   const numberAsString = number.toString();
   let result = [];
-  for (let i = 0; i < numberAsString.length - 1 ; i++) {
+  for (let i = 1; i < numberAsString.length ; i++) {
     result.push(Number(numberAsString.substring(i, subStringLength)));
   }
   return result.reduce((accumulator, currentValue) => accumulator * currentValue);
