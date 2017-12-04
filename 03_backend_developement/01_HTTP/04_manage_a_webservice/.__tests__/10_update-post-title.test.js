@@ -26,7 +26,7 @@ test("Check that the call has been done", done => {
   exec(`bash ${commandFile()} 1 "title"`).then(([result]) => {
     curl(
       "http://jsonplaceholder.typicode.com/posts/1",
-      { title: "title", postId: 1 },
+      { title: "title", id: 1 },
       curlHeader,
       "PUT"
     ).then(curlResult => {
