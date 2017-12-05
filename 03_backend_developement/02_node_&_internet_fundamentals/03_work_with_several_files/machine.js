@@ -5,20 +5,12 @@ function fillWithLitersOfCoffee(litersOfCoffee) {
 }
 
 function expresso() {
-  if (container.consumeLitersOfCoffee(0.08)) {
-    return true;
-  } else {
-    return false;
-  }
+  return container.consumeLitersOfCoffee(0.08);
 }
 
 
 function longCoffee() {
-  if (container.consumeLitersOfCoffee(0.15)) {
-    return true;
-  } else {
-    return false;
-  }
+  return container.consumeLitersOfCoffee(0.15);
 }
 
 fillWithLitersOfCoffee(0.25);
