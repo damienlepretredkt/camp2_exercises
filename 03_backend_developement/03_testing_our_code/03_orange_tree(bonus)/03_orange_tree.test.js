@@ -89,7 +89,7 @@ describe("Orange Tree should produces oranges", () => {
     expect(tree.oranges).toBe(5);
   });
 
-  test("should produce 5 oranges at 20 years old", () => {
+  test("should produce 0 oranges at 40 years old", () => {
     const tree = {age: 40, oranges: 0};
 
     orangeTree.produceOranges(tree);
