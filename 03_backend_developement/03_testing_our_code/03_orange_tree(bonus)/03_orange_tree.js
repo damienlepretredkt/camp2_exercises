@@ -57,4 +57,9 @@ const orangeTree = {
   }
 };
 
-module.exports = orangeTree;
+module.exports = {
+  grow: grow,
+  mightDie: mightDie,
+  produceOranges: produceOranges,
+  orangeTree: orangeTree
+};
