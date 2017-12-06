@@ -14,3 +14,8 @@ test("should split my sentence in an array 5 words", () => {
 test("should split with a ; in the sentence", () => {
   expect(toWords.toWords("Hello world; How are you")).toEqual(["Hello","world","How","are","you"]);
 });
+
+
+test("should throw an error id sentence is null", () => {
+  expect(toWords.toWords()).toBe("");
+});
