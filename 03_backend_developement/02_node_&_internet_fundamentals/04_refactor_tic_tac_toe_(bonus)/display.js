@@ -66,12 +66,12 @@ function playTurn() {
   reader.question(`${tools.getCurrentPlayer()}: What is your move? e.g: a1\n`, handleInput);
 }
 
-// function start() {
-//   tools.setCurrentPlayer();
-//   playTurn();
-// }
+function start() {
+  tools.setCurrentPlayer();
+  playTurn();
+}
 
-//start();
+
 
 
 module.exports = {
@@ -79,5 +79,6 @@ module.exports = {
   renderRow: renderRow,
   renderCell: renderCell,
   handleInput: handleInput,
-  playTurn: playTurn
+  playTurn: playTurn,
+  start: start
 };
