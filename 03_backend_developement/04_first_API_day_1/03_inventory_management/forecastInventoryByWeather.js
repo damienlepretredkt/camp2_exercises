@@ -16,6 +16,7 @@ const stores = [
 const weather_messages = {
   "500": "You need to buy some Umbrellas for the store in",
   "501": "You need to buy some Umbrellas for the store in",
+  "800" : "You need to buy some shoes to go running for the store in",
   "801" : "You need to buy some parkas for the store in",
   "802" : "You need to buy some parkas for the store in"
 };
