@@ -15,7 +15,8 @@
   },
   "homepage": "https://github.com/fewlinesco/camp2_exercises#readme",
   "dependencies": {
-    "phoenix-channels": "^1.0.0"
+    "phoenix-channels": "^1.0.0",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "jest": "^21.2.1"
