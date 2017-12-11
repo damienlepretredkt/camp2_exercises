@@ -10,7 +10,7 @@ const OAuthHandler = new OAuth.OAuth("https://api.twitter.com/oauth/request_toke
 
 function fetchLastTweets(callback) {
   OAuthHandler.get(
-    "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=JeffBezos&count=10&exclude_replies=true",
+    "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=TheNotoriousMMA&count=10&exclude_replies=true",
     TWITTER_ACCESS_TOKEN, //test user token
     TWITTER_AT_SECRET, //test user secret
     function (e, data){

@@ -7,7 +7,6 @@ const WATSON_PASSWORD = process.env.WATSON_PASSWORD;
 
 function fetchStringAnalysis(sentence, callback) {
   const url = `https://${WATSON_USERNAME}:${WATSON_PASSWORD}@watson-api-explorer.mybluemix.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&text=${sentence}`;
-
   request.get(
     {
       url: url,
@@ -48,9 +47,13 @@ function fetchStringAnalysis(sentence, callback) {
     },
     function(error, response, body) {
       if (error) {
-        console.log(error);
+        callback(error, null);
       }
-      callback(JSON.parse(body));
+      if (response.statusCode !== 200) {
+        callback(`error : ${response.statusCode}`, null)
+      } else {
+        callback(null, JSON.parse(body));
+      }
     }
   );
 }
