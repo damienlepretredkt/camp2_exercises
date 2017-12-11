@@ -5,7 +5,8 @@ const watson = require("./watson");
 
 const feelings = {
   "neutral" : "😐",
-  "positive" : "😊"
+  "positive" : "😊",
+  "negative": "😡"
 };
 
 function fetchTweets() {
@@ -17,18 +18,27 @@ function getTweetTextAndAskWatson(tweetTextList) {
 }
 
 function getSentimentAndEmotionFromWatson(sentence) {
-  watson.fetchStringAnalysis(sentence, function(json) {
-    console.log(`\n ${sentence} => is mostly ${feelings[json.sentiment.document.label]} (emotion)`);
-    const emotions = json.emotion.document.emotion;
+  watson.fetchStringAnalysis(sentence, function(error, json) {
+    if(error) {
+      console.log(`${error}`);
+    } else {
+      if (json) {
+        if(json.emotion && json.sentiment) {
+          const emotions = json.emotion.document.emotion;
+          const sentiment = json.sentiment.document.label;
+          console.log(`\n ${sentence} => is mostly ${feelings[sentiment]} (${sentiment})`);
 
-    Object.keys(emotions).map((emotion) =>
-      console.log(`${emotion} : ${Math.round(emotions[emotion] * 100)}`)
-    );
+          Object.keys(emotions).map((emotion) =>
+            console.log(`${emotion} : ${Math.round(emotions[emotion] * 100)}`)
+          );
+        } else {
+          console.log("something get wrong");
+        }
+
+      }
+    }
   });
 }
-
-
-
 
 fetchTweets();
 
