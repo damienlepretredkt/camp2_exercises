@@ -1,0 +1,25 @@
+CREATE TABLE purchases (
+id uuid CONSTRAINT identifier_constraint PRIMARY KEY,
+client_name varchar(255) NOT NULL,
+euros_spent integer NOT NULL,
+fidelity_points_earned smallint NOT NULL,
+purchase_date timestamp NOT NULL,
+number_of_items smallint NOT NULL)
+;
+
+
+-- Find the three oldest client's name
+SELECT * FROM purchases ORDER BY purchase_date ASC limit 3;
+
+-- Find all clients that have not made a purchase in the last two months
+SELECT * FROM purchases WHERE purchase_date BETWEEN (CURRENT_TIMESTAMP - INTERVAL '2 month') AND CURRENT_TIMESTAMP ORDER BY purchase_date DESC;
+
+-- Find all clients that have not made a purchase in the last month but are big customer (have purchased more than 3 items in one purchase previously)
+SELECT * FROM purchases WHERE purchase_date < (CURRENT_TIMESTAMP - INTERVAL '1 month') AND number_of_items > 3  ORDER BY purchase_date DESC;
+
+
+-- Find the best client (the one who spent the most money in one purchase)
+SELECT * FROM purchases ORDER BY euros_spent DESC limit(1);
+
+-- BONUS, find how much money our store made in the summer (11045668)
+SELECT SUM(euros_spent) FROM purchases WHERE purchase_date BETWEEN '2017-06-21 00:00:00.000' AND '2017-09-23 23:59:59.000';
