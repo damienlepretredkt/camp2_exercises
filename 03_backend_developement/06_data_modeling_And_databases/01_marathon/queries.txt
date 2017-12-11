@@ -1,0 +1,22 @@
+-- Find all runners for the "New York City Marathon - Women" edition 2017
+SELECT * FROM race WHERE name = 'New York City Marathon - Men' ORDER BY runner_position;
+
+-- Find the name of the top 3 runners of the "New York City Marathon - Men" edition 2017
+SELECT * FROM race WHERE name = 'New York City Marathon - Men' ORDER BY runner_position limit 3;
+
+
+-- Find runners who ran the race in less than 2:30:00 and didn't start in the 100 first runners
+SELECT * FROM race WHERE name = 'New York City Marathon - Men' AND runner_racing_time < '2:30:00' AND runner_bib > 100;
+
+-- Find runners who ran the course in:
+ -- less than 2:15:00 and didn't start in the 100 first runners or;
+ -- less than 2:30:00 if they started after the 100 firsts. We would like to have the data sorted first by runners who started in the first 100, followed by the others. We would also like to have them sorted by overlap time.
+SELECT * FROM race WHERE name = 'New York City Marathon - Men'
+  AND ((runner_racing_time < '2:15:00' AND runner_bib < 100)
+  OR (runner_racing_time < '2:30:00' AND runner_bib > 100))
+  ORDER BY runner_bib, runner_racing_time;
+
+
+
+-- BONUS: Find runners (bib, name, and position) who made a better time than "Koen Naert". We would like to have the fastest first
+SELECT * FROM race WHERE runner_racing_time < (SELECT runner_racing_time FROM race WHERE runner_name = 'Koen NAERT') ORDER BY runner_racing_time;
