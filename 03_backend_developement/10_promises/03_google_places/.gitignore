@@ -1,1 +1,3 @@
 .env.vars
+package-lock.json
+fixtures/
