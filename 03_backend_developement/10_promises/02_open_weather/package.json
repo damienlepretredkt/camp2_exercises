@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "VCR_MODE=cache jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^1.7.3",
+    "sepia": "^2.0.2"
   }
 }
