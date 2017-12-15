@@ -1,3 +1,4 @@
 .env.vars
 node_modules/
 coverage/
+package-lock.json
