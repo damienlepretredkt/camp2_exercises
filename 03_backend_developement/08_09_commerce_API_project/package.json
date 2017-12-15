@@ -9,6 +9,9 @@
   "author": "Damien LEPRETRE",
   "license": "ISC",
   "dependencies": {
-    "jest": "^21.2.1"
+    "express": "^4.16.2",
+    "jest": "^21.2.1",
+    "pg": "^7.4.0",
+    "pgtest": "^0.2.2"
   }
 }
