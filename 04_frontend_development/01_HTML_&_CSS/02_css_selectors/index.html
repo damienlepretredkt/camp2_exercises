@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8"/>
+    <title>CSS Selectors</title>
+  </head>
+  <body>
+    <style>
+      tr:nth-child(even) {
+        background-color: rgba(185, 179, 179, 0.5);
+      }
+      .colored-lines {
+
+      }
+      .important {
+        font-weight: bold;
+      }
+      .emphasis {
+        font-style: italic;
+      }
+      .important.emphasis {
+        background-color: rgb(255, 0, 0);
+      }
+
+    </style>
+    <h1>CSS Selectors</h1>
+    <table>
+      <tr>
+        <td>Line</td>
+        <td>One</td>
+      </tr>
+      <tr>
+        <td>Line</td>
+        <td>Two</td>
+      </tr>
+      <tr>
+        <td>Line</td>
+        <td>Three</td>
+      </tr>
+      <tr>
+        <td>Line</td>
+        <td>Four</td>
+      </tr>
+      <tr>
+        <td>Line</td>
+        <td>Five</td>
+      </tr>
+      <tr class="colored-lines">
+        <td>Line</td>
+        <td>Six</td>
+      </tr>
+    </table>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur <span class="emphasis important">sint occaecat</span> cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <div>
+      <span class="important">My first line of text with span</span>
+    </div>
+    <div>
+      <span >My second line of text with <span class="emphasis">span in italic</span></span>
+    </div>
+    <div>
+      <span class="emphasis important">My third line of text with bold italic and red</span>
+    </div>
+  </body>
+</html>
