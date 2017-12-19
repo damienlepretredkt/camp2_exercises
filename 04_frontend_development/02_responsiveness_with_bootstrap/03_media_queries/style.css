@@ -1,0 +1,23 @@
+@media screen and (max-device-width: 768px) {
+  div {
+    background: url('./charizard.png') no-repeat;
+    height: 475px;
+  }
+}
+
+@media screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px) {
+    div {
+      background: url('./charmander.png') no-repeat;
+      height: 900px;
+    }
+  }
+
+@media screen and (min-device-width: 1024px) {
+  div {
+    background: url('./charmeleon.png') no-repeat;
+    height: 475px;
+    width: 475px;
+  }
+}
