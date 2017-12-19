@@ -29,6 +29,18 @@
     <script src="./departments.js"></script>
     <script>
       // Your code here
+      function transformDepartments() {
+        return DEPARTMENTS
+        .map((department) => `<li>${department}</li>`)
+        .join("");
+      }
+
+      function getDepartmentAsHTML() {
+        const element = document.querySelector("ul");
+        element.innerHTML = transformDepartments()
+      }
+
+      getDepartmentAsHTML();
       // the departments are accessible in a global variable named DEPARTMENTS
     </script>
   </body>

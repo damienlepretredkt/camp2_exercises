@@ -103,20 +103,6 @@ const DEPARTMENTS = [
 ];
 
 
-function transformDepartments() {
-  return DEPARTMENTS
-  .map((department) => `<li>${department}</li>`)
-  .join("");
-}
-
-function getDepartmentAsHTML() {
-  const element = document.querySelector("ul");
-  element.innerHTML = transformDepartments()
-}
-
-getDepartmentAsHTML();
-
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = DEPARTMENTS;
-  getDepartmentAsHTML: getDepartmentAsHTML
 }
