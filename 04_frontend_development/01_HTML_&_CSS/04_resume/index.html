@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8"/>
+    <title>CV Damien</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Roboto, sans-serif;
+      }
+
+      header {
+        width: 100%;
+        height: 370px;
+        background: url("/Users/Damien/Downloads/levi-bare-290789.jpg") no-repeat;
+        background-size: cover;
+        background-position: center center;
+        filter: blur(2px);
+      }
+
+      body {
+        background-color: #f5f5f5
+      }
+
+      .main-card {
+        background-color: #5f86a9;
+        height: 400px;
+        margin-top: -220px;
+        position: relative;
+        margin-left: 140px;
+        margin-right: 140px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .identity-items {
+        display: flex;
+        flex-direction: row;
+        color: white;
+        margin-left: 40px;
+        margin-bottom: 10px;
+      }
+
+      .diagonale {
+        border-bottom-color: rgba(0, 0, 0, 0);
+        border-bottom-style: solid;
+        border-bottom-width:0px;
+        border-left-color: #5f86a9;
+        border-left-style: solid;
+        border-left-width: 100px;
+        border-right-color: rgba(0, 0, 0, 0);
+        border-right-style: solid;
+        border-right-width: 0px;
+        border-top-color: rgba(223, 50, 50, 0);
+        border-top-style: solid;
+        border-top-width: 400px;
+        box-sizing: border-box;
+        color: rgb(97, 97, 97);
+        display: block;
+        font-family: Muli, sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        height: 400px;
+        line-height: 21.4286px;
+        position: absolute;
+        text-size-adjust: 100%;
+        top: 0px;
+        visibility: visible;
+        width:100px;
+        z-index:1;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-text-stroke-color: rgba(0, 0, 0, 0);
+        -webkit-text-stroke-width: 1px;
+      }
+
+      .fill-remaining-space {
+        flex: 1 1 auto;
+      }
+    </style>
+
+    <header></header>
+
+    <div class="main-card">
+      <div style="display: flex; flex-direction: column; justify-content: center; ">
+        <div class="identity-items">
+          <h2 style="margin-bottom: 40px">Firstname LASTNAME</h2>
+        </div>
+        <div class="identity-items">
+          <i class="material-icons">location_on</i>
+          <span class="identity-items">mon addresse</span>
+        </div>
+        <div class="identity-items">
+          <i class="material-icons">email</i>
+          <span class="identity-items">firstname.lastname@fake-email.com</span>
+        </div>
+        <div class="identity-items">
+          <i class="material-icons">language</i>
+          <span class="identity-items">firstname.lastname.com</span>
+        </div>
+
+      </div>
+      <span class="fill-remaining-space"></span>
+      <div class="main-picture">
+        <img src="/Users/Damien/Downloads/identity2.jpg" alt="Me !" style="height: -webkit-fill-available">
+        <div class="diagonale">
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
