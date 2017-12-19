@@ -34,7 +34,12 @@
     </div>
     <script src="./departments.js"></script>
     <script>
-      // Your code here
+      displayDepartments(DEPARTMENTS);
+      const myInput = document.querySelector("#search-department");
+      myInput.addEventListener("input", function() {
+        displayDepartments(
+          DEPARTMENTS.filter(department => department.includes(this.value.toUpperCase())));
+      });
     </script>
   </body>
 </html>
