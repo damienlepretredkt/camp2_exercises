@@ -1,0 +1,3 @@
+.env.vars
+.sass-cache/
+package-lock.json
