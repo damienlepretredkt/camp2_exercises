@@ -15,6 +15,9 @@
   },
   "homepage": "https://github.com/fewlinesco/camp2_exercises#readme",
   "dependencies": {
+    "express": "^4.16.2",
+    "nunjucks": "^3.0.1",
+    "pg": "^7.4.0",
     "phoenix-channels": "^1.0.0",
     "request": "^2.83.0"
   },
