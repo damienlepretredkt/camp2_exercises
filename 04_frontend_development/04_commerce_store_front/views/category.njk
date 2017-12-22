@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{category.label}}</li>
+{% endblock %}
+
+{% block content %}
+
+<div class="row mt-1">
+{% for product in products %}
+
+  <div class="col-3 mb-1">
+    {# /media/837/8379973/big_25fa7d6d47e545d38b3a6e508b5db88e.jpg #}
+    <a href="/products/{{product.id}}?categoryId={{category.id}}">
+      <div class="card">
+        <img class="card-img-top" src="{{product.image_path}}" alt="Card image cap">
+        <div class="card-body">
+          <p>
+            {{product.title}}
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
