@@ -1,0 +1,4 @@
+nodes_modules/
+.env.vars
+package-lock.json
+.sass-cache
