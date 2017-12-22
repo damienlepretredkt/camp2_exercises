@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item" aria-current="page"><a href="/categories/{{category.id}}">{{category.label}}</a></li>
+<li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="row mt-1">
+  <div class="col-12 col-lg-6">
+    <img src="{{product.image_path}}" alt="{{product.title}}">
+  </div>
+  <div class="col-6">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h4 class="card-title">{{product.title}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{product.decathlon_id}}</h6>
+        <p class="card-text">{{product.description}}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <p>
+          <div>
+            Price : {{product.min_price}} €
+          </div>
+
+          <div class="stars-outer">
+            <div class="stars-inner" style="width: {{product.rating_percent}}%"></div>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
