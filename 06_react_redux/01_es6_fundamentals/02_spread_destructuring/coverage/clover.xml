@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1515486706471" clover="3.2.0">
+  <project timestamp="1515486706471" name="All files">
+    <metrics statements="17" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4" elements="28" coveredelements="26" complexity="0" loc="17" ncloc="17" packages="1" files="1" classes="1">
+      <file name="02_spread_destructuring.js" path="/Users/Damien/Workspace/camp2_exercises/06_react_redux/01_es6_fundamentals/02_spread_destructuring/02_spread_destructuring.js">
+        <metrics statements="17" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>
