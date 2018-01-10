@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function Cell(props) {
-  let cellDisplay = "_"
+  let cellDisplay = ""
   if (props.cell !== null) {
     cellDisplay = props.cell
   }

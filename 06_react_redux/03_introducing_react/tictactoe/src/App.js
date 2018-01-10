@@ -6,14 +6,11 @@ import { flattenArray, isNotNull } from './tools';
 
 class App extends Component {
 
-
-
   constructor(props) {
     super(props);
-    const randomPlayer = ["X", "O"][Math.round(Math.random())]
+    const randomPlayer = ["X", "O"][Math.round(Math.random())];
     this.state = {
       currentPlayer: randomPlayer,
-      value: '',
       title: `Tic Tac Toe , ${randomPlayer} now it's time to play`,
       gameState: {
         a: Array(3).fill(null),
@@ -21,8 +18,6 @@ class App extends Component {
         c: Array(3).fill(null)
       }
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleCellClick = this.handleCellClick.bind(this)
   }
 
   render() {
@@ -41,11 +36,7 @@ class App extends Component {
     );
   }
 
-  handleChange = (event) => {
-    this.setState({value: event.target.value});
-  }
-
-  handleCellClick(cellCoordinate) {
+  handleCellClick = (cellCoordinate) => {
 
     const coordinate = this.getCoordinate(cellCoordinate, this.state.gameState);
     if (coordinate) {
@@ -107,14 +98,12 @@ class App extends Component {
     if (this.state.currentPlayer === "X") {
       this.setState({
         currentPlayer: "O",
-        title: "Tic Tac Toe , O now it's time to play",
-        value: ''
+        title: "Tic Tac Toe , O now it's time to play"
       });
     } else {
       this.setState({
         currentPlayer: "X",
-        title: "Tic Tac Toe, X now it's time to play",
-        value: ''
+        title: "Tic Tac Toe, X now it's time to play"
       });
     }
   }
@@ -139,6 +128,7 @@ class App extends Component {
       currentPlayer: newPlayer,
       title: `Tic Tac Toe , ${newPlayer} now it's time to play`
     })
+
   }
 
 }
