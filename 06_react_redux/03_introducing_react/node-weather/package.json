@@ -1,0 +1,17 @@
+{
+  "name": "weather-node-dle",
+  "version": "0.0.1",
+  "description": "sample weather module for dev purpose",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node server.js"
+  },
+  "author": "dle",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "node-fetch": "^1.7.3"
+  }
+}
