@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Row from './Row.js'
+import Row from '../rows/Row.js'
 import { _ } from 'underscore';
 
 class Table extends Component {

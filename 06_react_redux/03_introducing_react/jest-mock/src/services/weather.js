@@ -1,9 +1,9 @@
 
 
-function loadWeather(fetch) {
+function loadWeather(fetch, zipcode) {
 
   const weatherURL = "http://localhost:3003";
-  return fetch(`${weatherURL}/tomorrow-weather/59155`)
+  return fetch(`${weatherURL}/tomorrow-weather/${zipcode}`)
     .then(response => response.json())
 }
 

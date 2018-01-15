@@ -8,8 +8,8 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #324279;
+  height: 120px;
   padding: 20px;
   color: white;
 }
@@ -36,4 +36,15 @@
 table thead tr td {
   font-weight: bold;
 
+}
+
+
+.paper {
+  width: '100%';
+  marginTop: theme.spacing.unit * 3;
+  overflowX: 'auto';
+}
+
+.table {
+  minWidth: 700,
 }

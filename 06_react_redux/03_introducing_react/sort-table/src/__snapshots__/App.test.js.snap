@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not change from snapshot 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <h1
+      className="App-title"
+    >
+      Welcome to Sort Table
+    </h1>
+  </header>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th
+            onClick={[Function]}
+          >
+            Product Id
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            Title
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            Price
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            8044622
+          </td>
+          <td>
+            2 guêtres RIDING noir
+          </td>
+          <td>
+            14.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8247793
+          </td>
+          <td>
+            PALMES WADERS
+          </td>
+          <td>
+            24.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8249674
+          </td>
+          <td>
+            BOBINE FUN 2 3 4mm X 40 20 12m
+          </td>
+          <td>
+            6.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8282689
+          </td>
+          <td>
+            Corne chasse 14cm
+          </td>
+          <td>
+            9.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8298354
+          </td>
+          <td>
+            OREILLER CONFORT
+          </td>
+          <td>
+            6.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8326155
+          </td>
+          <td>
+            Pantalon Training mesh marine
+          </td>
+          <td>
+            44.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8329121
+          </td>
+          <td>
+            COUTEAU A PALOURDES
+          </td>
+          <td>
+            4.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8353265
+          </td>
+          <td>
+            Justaucorps manche longue Gym.
+          </td>
+          <td>
+            34.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8354464
+          </td>
+          <td>
+            Basic L print Long Gold Fusion
+          </td>
+          <td>
+            9.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8357549
+          </td>
+          <td>
+            MINIMIZER EDEN UNI  NOIR
+          </td>
+          <td>
+            19.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8370749
+          </td>
+          <td>
+            Doudoune Hike 100 garçon bleu
+          </td>
+          <td>
+            9.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8379970
+          </td>
+          <td>
+            Pantalon Gym
+          </td>
+          <td>
+            12.99
+          </td>
+        </tr>
+        <tr>
+          <td>
+            8380024
+          </td>
+          <td>
+            RUN ELIOPRIME
+          </td>
+          <td>
+            54.99
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

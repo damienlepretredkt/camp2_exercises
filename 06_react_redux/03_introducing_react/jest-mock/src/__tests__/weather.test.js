@@ -13,7 +13,7 @@ const fakeFetch = jest.fn().mockImplementation(() =>
 test("loadWeather: it gives us a list of 8 slice of one day weather", () => {
 
   const expectedResult = fakeWeatherData
-  return loadWeather(fakeFetch)
+  return loadWeather(fakeFetch, "59000")
     .then(weathers => {
       expect(weathers).toEqual(expectedResult);
     })
