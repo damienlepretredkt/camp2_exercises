@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Button } from 'react-bootstrap';
-import AddTodo from './AddTodo'
-import TodoList from './TodoList'
+import AddTodo from './components/add-todo/AddTodo'
+import TodoList from './components/todo-list/TodoList'
+
+
 
 class App extends Component {
 

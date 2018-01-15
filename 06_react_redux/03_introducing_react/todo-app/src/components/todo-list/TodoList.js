@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ListGroup, ListGroupItem, Checkbox } from 'react-bootstrap';
 
 function TodoList(props) {

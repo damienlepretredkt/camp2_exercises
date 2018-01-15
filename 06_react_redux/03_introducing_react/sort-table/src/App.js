@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Table from './Table.js';
-import products from './data.js';
+import Table from './components/table/Table.js';
+import products from './__datas__/data.js';
 
 class App extends Component {
   render() {

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not change from snapshot 1`] = `
+<div
+  className="App"
+>
+  <header>
+    <h1>
+      Hello World !
+    </h1>
+  </header>
+</div>
+`;
