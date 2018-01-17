@@ -2,13 +2,22 @@ import { createStore, combineReducers } from 'redux';
 import sendLogin, { sendMessage } from './sendWs.js'
 
 const initialState = {
-  messages: [],
-  newMessage: '',
-  loginInputValue: '',
-  userName: null
+  login: {
+    loginInputValue: '',
+    userName: null
+  },
+  message: {
+    newMessage: ''
+  },
+  messages : {
+    messages: []
+  }
+
+
+
 }
 
-function loginReducer(state = initialState, action) {
+function loginReducer(state = initialState.login, action) {
   switch (action.type) {
     case 'LOGINVALUE':
       return state = {...state, loginInputValue: action.loginInputValue}
@@ -20,19 +29,19 @@ function loginReducer(state = initialState, action) {
   }
 }
 
-function messagesReducer(state = initialState, action) {
+function messagesReducer(state = initialState.message, action) {
   switch (action.type) {
     case 'NEWMESSAGE':
       return state = {...state, newMessage: action.newMessage}
     case 'SENDMESSAGEANDRESET':
-      sendMessage(state.userName, state.newMessage)
+      sendMessage(store.getState().login.userName, state.newMessage)
       return state = {...state, newMessage: ''}
     default:
       return state
   }
 }
 
-function incomingMessagesReducer(state = initialState, action) {
+function incomingMessagesReducer(state = initialState.messages, action) {
   switch (action.type) {
     case 'INCOMINGMESSAGES':
       return state = {...state, messages: action.messages}
