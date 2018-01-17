@@ -1,37 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ""
-    };
-  }
-
-  handleChange = event => {
-    this.setState({ value: event.target.value });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.handleUserName(this.state.value);
-  };
-
-  render() {
+function Login(props)  {
     return (
-      <form className="Login" onSubmit={this.handleSubmit}>
+      <form className="Login" onSubmit={props.handleSubmit}>
         <div>
           Please choose a login name
         </div>
         <input
           type="text"
-          onChange={this.handleChange}
-          value={this.state.value}
+          onChange={props.handleChange}
+          value={props.loginInputValue}
         />
         <button type="submit">Log in</button>
       </form>
     );
   }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleChange: (event) => dispatch({type: "LOGINVALUE", loginInputValue: event.target.value}),
+    handleSubmit: (event) => {
+      event.preventDefault();
+      return dispatch({type: "LOGIN"})
+    }
+  }
 }
 
-export default Login;
+function mapStateToProps(state) {
+  return {
+    loginInputValue: state.login.loginInputValue,
+  }
+}
+
+const LoginComponent = connect(mapStateToProps, mapDispatchToProps)(Login);
+export default LoginComponent;

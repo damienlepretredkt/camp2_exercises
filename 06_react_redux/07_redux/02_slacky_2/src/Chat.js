@@ -1,22 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Chat extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      newMessage: ""
-    };
-  }
-
-  handleChange = event => {
-    this.setState({ newMessage: event.target.value });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.sendMessage(this.state.newMessage);
-    this.setState({ newMessage: "" });
-  };
 
   componentDidUpdate() {
     // https://reactjs.org/docs/react-component.html#componentdidupdate
@@ -48,11 +33,11 @@ class Chat extends Component {
           )}
         </div>
         <div className="Chat-form">
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.props.handleSubmit}>
             <input
               type="text"
-              value={this.state.newMessage}
-              onChange={this.handleChange}
+              value={this.props.newMessage}
+              onChange={this.props.handleChange}
             />
             <button type="submit">Send</button>
           </form>
@@ -62,4 +47,22 @@ class Chat extends Component {
   }
 }
 
-export default Chat;
+function mapDispatchToProps(dispatch) {
+  return {
+    handleChange: (event) => dispatch({type: "NEWMESSAGE", newMessage: event.target.value}),
+    handleSubmit: (event) => {
+      event.preventDefault();
+      return dispatch({type: "SENDMESSAGEANDRESET"})
+    }
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    newMessage: state.message.newMessage,
+    messages: state.messages.messages
+  }
+}
+
+const ChatComponent = connect(mapStateToProps, mapDispatchToProps)(Chat);
+export default ChatComponent;
