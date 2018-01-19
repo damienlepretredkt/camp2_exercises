@@ -1,1 +1,0 @@
-../05_tricount_project/01_user_authentication/.eslintrc.js
