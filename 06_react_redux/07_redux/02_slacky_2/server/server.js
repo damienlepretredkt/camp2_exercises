@@ -23,7 +23,7 @@ wss.on("connection", function connection(ws, req) {
         return;
       case "NEW_MESSAGE":
         // Add the message to the list of messages
-        messages.push({ userName: message.userName, message: message.message });
+        messages.push({ userName: message.userName, channel: message.channel, message: message.message });
 
         // Sends all messages to all connected clients
         wss.clients.forEach((client) => {

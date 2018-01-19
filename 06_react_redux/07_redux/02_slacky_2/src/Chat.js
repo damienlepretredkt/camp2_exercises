@@ -1,68 +1,34 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+
+import SideBarComponent from './Sidebar';
+import ChatBoxComponent from './Chatbox'
+import NoChan from './NoChan';
+import "./Chat.css";
+
 
 class Chat extends Component {
 
-  componentDidUpdate() {
-    // https://reactjs.org/docs/react-component.html#componentdidupdate
-    // This will make the list of messages scroll to the bottom each time
-    // the component update, that way, the last message will always be visible
-    this.messageListDiv.scrollTop = this.messageListDiv.scrollHeight;
-  }
-
   render() {
+    console.log(this.props);
     return (
-      <div className="Chat">
-        <div
-          className="Chat-messages"
-          ref={(node) => {
-            // refs allows you to have a reference to an element of the DOM
-            // You should use this parcimoniously and don't change the DOM or React
-            // will go crazy
-            // See https://reactjs.org/docs/refs-and-the-dom.html
-            this.messageListDiv = node;
-          }}
-        >
-          {this.props.messages.map((message, index) =>
-            (
-              <div className="message-container" key={index}>
-                <span className="author">{message.userName}</span>
-                <span className="message">{message.message}</span>
-              </div>
-            )
+      <div>
+        <div className="App main">
+          <header className="App-header">
+            <h1 className="App-title">Slacky</h1>
+          </header>
+          <SideBarComponent></SideBarComponent>
+          {this.props.match.params.id ? (
+            <ChatBoxComponent></ChatBoxComponent>
+          ) : (
+            <NoChan></NoChan>
           )}
         </div>
-        <div className="Chat-form">
-          <form onSubmit={this.props.handleSubmit}>
-            <input
-              type="text"
-              value={this.props.newMessage}
-              onChange={this.props.handleChange}
-            />
-            <button type="submit">Send</button>
-          </form>
-        </div>
       </div>
+
     );
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    handleChange: (event) => dispatch({type: "NEWMESSAGE", newMessage: event.target.value}),
-    handleSubmit: (event) => {
-      event.preventDefault();
-      return dispatch({type: "SENDMESSAGEANDRESET"})
-    }
-  }
-}
 
-function mapStateToProps(state) {
-  return {
-    newMessage: state.message.newMessage,
-    messages: state.messages.messages
-  }
-}
 
-const ChatComponent = connect(mapStateToProps, mapDispatchToProps)(Chat);
-export default ChatComponent;
+export default Chat;

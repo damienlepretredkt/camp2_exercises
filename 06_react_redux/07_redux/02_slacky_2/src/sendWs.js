@@ -24,11 +24,12 @@ function sendLogin(username) {
   );
 }
 
-function sendMessage(username, message) {
+function sendMessage(username, channel, message) {
   websocket.send(
     JSON.stringify({
       type: "NEW_MESSAGE",
       userName: username,
+      channel: channel,
       message: message
     })
   );
