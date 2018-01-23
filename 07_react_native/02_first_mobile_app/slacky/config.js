@@ -1,4 +1,4 @@
 export default {
-  webSockerHostname: '192.168.0.108',
+  webSockerHostname: '10.110.130.85',
   webSockerPort: 8080
 };
