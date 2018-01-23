@@ -4,7 +4,7 @@ import { DrawerNavigator, DrawerItems } from 'react-navigation';
 import Chat from './Chat'
 import Login from './Login'
 import ChatBoxComponent from './Chatbox'
-import SideMenu from './SideMenu'
+import SideMenuComponent from './SideMenu'
 
 
 
@@ -21,7 +21,7 @@ const RootNavigator = DrawerNavigator({
 },
 {
   // define customComponent here
-  contentComponent: SideMenu
+  contentComponent: SideMenuComponent
 }
 );
 

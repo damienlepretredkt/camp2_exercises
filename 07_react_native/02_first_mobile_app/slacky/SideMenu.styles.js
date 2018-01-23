@@ -7,11 +7,12 @@ export default {
     padding: 10
   },
   navSectionStyle: {
-    backgroundColor: 'lightgrey'
+
   },
   sectionHeadingStyle: {
     paddingVertical: 10,
-    paddingHorizontal: 5
+    paddingHorizontal: 5,
+    backgroundColor: 'lightgrey'
   },
   footerContainer: {
     padding: 20,

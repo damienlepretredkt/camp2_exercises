@@ -1,6 +1,7 @@
 import store from './store'
+import config from './config'
 
-const websocket = new WebSocket(`ws://${window.location.hostname}:8080`);
+const websocket = new WebSocket(`ws://${config.webSockerHostname}:${config.webSockerPort}`);
 
 websocket.addEventListener("message", event => {
   const message = JSON.parse(event.data);
@@ -12,6 +13,8 @@ websocket.addEventListener("message", event => {
     case "MESSAGES":
       store.dispatch({type: "INCOMINGMESSAGES", messages: message.data})
       return;
+    case "CHANNELS":
+      store.dispatch({type: "CHANNELS", channels: message.data})
   }
 });
 
@@ -24,11 +27,12 @@ function sendLogin(username) {
   );
 }
 
-function sendMessage(username, message) {
+function sendMessage(username, channel, message) {
   websocket.send(
     JSON.stringify({
       type: "NEW_MESSAGE",
       userName: username,
+      channel: channel,
       message: message
     })
   );
