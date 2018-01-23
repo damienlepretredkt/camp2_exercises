@@ -6,6 +6,7 @@ const app = express();
 
 // This will store the messages for the time of the session
 const messages = [];
+const channels = ['camp1', 'camp2', 'camp3']
 
 // Launch the Websocket server
 const wss = new WebSocket.Server({ server });
@@ -18,6 +19,7 @@ wss.on("connection", function connection(ws, req) {
         wss.clients.forEach((client) => {
           if (client.readyState === WebSocket.OPEN) {
             client.send(JSON.stringify({ type: "MESSAGES", data: messages}));
+            client.send(JSON.stringify({type: "CHANNELS", data: channels}));
           }
         });
         return;

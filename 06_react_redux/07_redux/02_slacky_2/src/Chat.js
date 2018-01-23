@@ -11,7 +11,7 @@ class Chat extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className="fullScreen">
         <div className="App main">
           <header className="App-header">
             <h1 className="App-title">Slacky</h1>

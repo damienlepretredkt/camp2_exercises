@@ -12,6 +12,8 @@ websocket.addEventListener("message", event => {
     case "MESSAGES":
       store.dispatch({type: "INCOMINGMESSAGES", messages: message.data})
       return;
+    case "CHANNELS":
+      store.dispatch({type: "CHANNELS", channels: message.data})
   }
 });
 

@@ -5,11 +5,11 @@ import { replace } from 'react-router-redux'
 
 function SideBar(props) {
 
-  const channels = ['chan1', 'camp2', 'react-router-chan']
+
 
   return(
       <div className="sidenav">
-        {channels.map((channel, index) => <a key={index} onClick={() => props.handleChannelSelect(channel)}>{channel}</a>)}
+        {props.channels.map((channel, index) => <a key={index} onClick={() => props.handleChannelSelect(channel)}>{channel}</a>)}
       </div>
   )
 }
@@ -26,7 +26,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-
+    channels: state.messages.channels
   }
 }
 
