@@ -15,6 +15,7 @@ const initialState = {
     currentChannel: ''
   },
   messages : {
+    channels: [],    
     messages: []
   }
 
@@ -52,6 +53,8 @@ function incomingMessagesReducer(state = initialState.messages, action) {
   switch (action.type) {
     case 'INCOMINGMESSAGES':
       return {...state, messages: action.messages}
+    case 'CHANNELS':
+      return state = {...state, channels: action.channels}
     default:
       return state
   }
