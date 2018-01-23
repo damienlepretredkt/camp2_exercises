@@ -1,18 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Image } from 'react-native';
 import { connect } from "react-redux";
+import ToolBar from './Toolbar'
 
 class Login extends React.Component {
   render() {
     return(
       <View style={styles.container}>
-        <TextInput
-          style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 1}}
-          placeholder='Enter a nickname'
-          onChangeText={(text) => this.props.handleChange(text)}
-          onSubmitEditing={() => this.props.handleSubmit()}
-          value={this.props.loginInputValue}
-        />
+        <ToolBar
+          title="Login"
+          navigation={this.props.navigation}>
+        </ToolBar>
+        <View style={styles.inputContainer}>
+          <Image source={require('./slacky.png')} style={styles.logo}/>
+          <TextInput
+            style={styles.input}
+            placeholder='Enter a nickname'
+            placeholderTextColor='rgba(255, 255, 255, 0.6)'
+            onChangeText={(text) => this.props.handleChange(text)}
+            onSubmitEditing={() => this.props.handleSubmit()}
+            value={this.props.loginInputValue}
+          />
+        </View>
       </View>
     );
   }
@@ -20,12 +29,31 @@ class Login extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#222',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    flexDirection: 'column'
   },
+  inputContainer: {
+    flex: 1,
+    width: '100%',
+    backgroundColor: '#222',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  input: {
+    height: 40,
+    width: '100%',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    color: 'white'
+  },
+  logo: {
+    width: 180,
+    height: 180
+  }
 });
 
 function mapDispatchToProps(dispatch) {

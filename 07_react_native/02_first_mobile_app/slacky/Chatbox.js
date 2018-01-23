@@ -1,15 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, FlatList, KeyboardAvoidingView } from 'react-native';
 import { connect } from "react-redux";
+import styles from './Chatbox.styles';
+import ToolBar from './Toolbar'
 
 let channel;
 
 class ChatBox extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.channel = this.props.navigation.state.params.channel.channel
-  }
 
   static navigationOptions = {
     drawerLabel: 'Chatbox'
@@ -17,36 +14,46 @@ class ChatBox extends React.Component {
 
   render() {
     return(
-      <View style={styles.container}>
-        <Text>Chatbox channel = {this.channel}</Text>
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <ToolBar
+          title={this.props.navigation.state.params.channel}
+          navigation={this.props.navigation}>
+        </ToolBar>
 
-        {messages.map((message, index) => {
-          <Text key={index}> {message.userName} say: {message.message}</Text>
-        })}
+        <KeyboardAvoidingView style={styles.messagesContainer}>
+          <FlatList
+            data={this.props.messages.filter((message) => message.channel === this.props.navigation.state.params.channel)}
+            renderItem={({item}) => <Text style={styles.message}>{item.userName} say: {item.message}</Text>}
+            contentContainerStyle={styles.messages}
+            keyExtractor={(item, index) => index}
+          />
+        </KeyboardAvoidingView>
 
-
-      </View>
+        <KeyboardAvoidingView style={styles.messageBoxContainer}>
+          <TextInput
+            style={styles.messageBox}
+            placeholder='message'
+            onChangeText={(text) => this.props.handleChange(text)}
+            onSubmitEditing={() => this.props.handleSubmit(this.props.navigation.state.params.channel.channel)}
+            value={this.props.message}
+          />
+        </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
 
 
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    height: 50,
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 function mapDispatchToProps(dispatch) {
   return {
-
+    handleChange: (text) => dispatch({type: "NEWMESSAGE", newMessage: text}),
+    handleSubmit: (channel) => {
+      return dispatch({type: "SENDMESSAGEANDRESET"})
     }
   }
+}
 
 
 function mapStateToProps(state) {
